@@ -1,1 +1,1 @@
-## gatsbyBlog
+## Gatsby Default Starter
