@@ -1,1 +1,1 @@
-## wordpress + git + vercel
+## gatsbyBlog
