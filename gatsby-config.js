@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `letsGetit`,
+    description: `hahaha`,
+    author: `@iduk`,
+    siteUrl: `https://letsby.gatsbyjs.io`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -11,7 +11,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/static/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
     `gatsby-transformer-sharp`,
@@ -19,15 +27,38 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `letsby blog`,
+        short_name: `letsby`,
         start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/static/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        additionalData: '$env: ' + process.env.NODE_ENV + ';',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      content: ['src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}'],
+      options: {
+        printRejected: true,
+        purgeCSSOptions: {
+          // https://purgecss.com/configuration.html#options
+          // safelist: ['safelist'], // Don't remove this selector
+        },
       },
     },
   ],

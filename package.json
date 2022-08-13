@@ -4,24 +4,13 @@
   "description": "Gatsby Blog Start",
   "version": "0.1.0",
   "author": "iduk <iduk.design@gmail.com>",
-  "dependencies": {
-    "gatsby": "^4.20.0",
-    "gatsby-plugin-image": "^2.20.0",
-    "gatsby-plugin-manifest": "^4.20.0",
-    "gatsby-plugin-sharp": "^4.20.0",
-    "gatsby-source-filesystem": "^4.20.0",
-    "gatsby-transformer-sharp": "^4.20.0",
-    "prop-types": "^15.8.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "devDependencies": {
-    "prettier": "^2.7.1"
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -31,11 +20,46 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "dependencies": {
+    "gatsby": "^4.20.0",
+    "gatsby-cli": "^4.20.0",
+    "gatsby-plugin-image": "^2.20.0",
+    "gatsby-plugin-manifest": "^4.20.0",
+    "gatsby-plugin-postcss": "^5.20.0",
+    "gatsby-plugin-purgecss": "^6.1.2",
+    "gatsby-plugin-sass": "^5.20.0",
+    "gatsby-plugin-sharp": "^4.20.0",
+    "gatsby-source-filesystem": "^4.20.0",
+    "gatsby-source-graphql": "^4.20.0",
+    "gatsby-source-wordpress": "^6.20.0",
+    "gatsby-transformer-sharp": "^4.20.0",
+    "global": "^4.4.0",
+    "postcss": "^8.4.16",
+    "postcss-preset-env": "^7.7.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint --fix",
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD"
 }
