@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import * as styles from '../components/index.module.css'
+import '../assets/scss/main.scss'
 
 const links = [
   {
@@ -79,9 +79,9 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <div className={styles.textCenter}>
+    <div>
       <StaticImage
-        src="../static/images/example.png"
+        src="../assets/images/example.png"
         loading="eager"
         width={64}
         quality={95}
@@ -92,7 +92,7 @@ const IndexPage = () => (
       <h1>
         Welcome to <b>Gatsby!</b>
       </h1>
-      <p className={styles.intro}>
+      <p>
         <b>Example pages:</b>
         {samplePageLinks.map((link, i) => (
           <React.Fragment key={link.url}>
@@ -104,19 +104,7 @@ const IndexPage = () => (
         Edit <code>src/pages/index.js</code> to update this page.
       </p>
     </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
+
     {moreLinks.map((link, i) => (
       <React.Fragment key={link.url}>
         <a href={`${link.url}${utmParameters}`}>{link.text}</a>

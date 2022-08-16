@@ -1,0 +1,58 @@
+@use "sass:color";
+
+:root {
+    @each $name, $value in $color-palette{
+        --#{''+$name}: #{$value};      
+    }
+}
+
+// Color Invert
+@mixin color-invert($background) {
+  $r: red($background);
+  $g: green($background);
+  $b: blue($background);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) * 0.001;
+
+  @if ($yiq >= 128) {
+    color: black;
+  } @else {
+    color: white;
+  }
+}
+
+
+$color-property: (
+  bg: background-color,
+  color: color,
+  border: border-color
+);
+
+
+
+@each $name, $value in $color-palette {
+  @each $selector, $property in $color-property {
+    .#{$selector}-#{'' + $name} {
+      // #{$property}: $value !important;
+      #{$property}: var(--#{$name}) !important;
+
+      @if $selector == 'bg' {
+        @include color-invert($value);
+      }
+    }
+  }
+}
+
+
+@each $name, $value in $grays {
+  @each $selector, $property in $color-property {
+    .#{$selector}-#{'' + $name} {
+      // #{$property}: $value !important;
+      #{$property}: var(--#{$name}) !important;
+
+      @if $selector == 'bg' {
+        @include color-invert($value);
+      }
+    }
+  }
+}

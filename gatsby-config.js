@@ -10,16 +10,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/static/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
+        name: `src`,
+        path: `${__dirname}/src`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -31,9 +23,7 @@ module.exports = {
         short_name: `letsby`,
         start_url: `/`,
         background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/static/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
@@ -41,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        additionalData: '$env: ' + process.env.NODE_ENV + ';',
+        implementation: require('sass'),
       },
     },
     {

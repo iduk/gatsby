@@ -1,0 +1,121 @@
+// My Variables
+
+/* ---------------------------------------------------------- 
+    colors palette
+ ---------------------------------------------------------- */
+
+$brand-1: #a4d233;
+$brand-2: #f2827f;
+$blue: #084b83;
+$green: #127039;
+$yellow: #c2b542;
+$orange: #e58f65;
+$red: #d05353;
+$gray: #88a0a8;
+$dark: #111111;
+$light: #f5f5f5;
+
+$color-palette: (
+  primary: $brand-1,
+  secondary: $brand-2,
+  green: $green,
+  yellow: $yellow,
+  red: $red,
+  dark: $dark,
+  light: $light,
+  gray: $gray,
+) !default;
+
+$gray-100: #f8f9fa;
+$gray-200: #eeeeee;
+$gray-300: #dddddd;
+$gray-400: #cccccc;
+$gray-500: #999999;
+$gray-600: #666666;
+$gray-700: #444b54;
+$gray-800: #333333;
+$gray-900: #222222;
+
+$grays: (
+  gray-1: $gray-100,
+  gray-2: $gray-200,
+  gray-3: $gray-300,
+  gray-4: $gray-400,
+  gray-5: $gray-500,
+  gray-6: $gray-600,
+  gray-7: $gray-700,
+  gray-8: $gray-800,
+  gray-9: $gray-900,
+) !default;
+
+/* ---------------------------------------------------------- 
+    Typography
+ ---------------------------------------------------------- */
+$text-base: 1rem;
+
+$text-sizes: (
+  'xs': $text-base * 0.75,
+  'sm': $text-base * 0.875,
+  'md': $text-base,
+  'lg': $text-base * 1.25,
+  'xl': $text-base * 1.5,
+  '2xl': $text-base * 1.75,
+  '3xl': $text-base * 2,
+) !default;
+
+$headings: (
+  1: $text-base * 3.5,
+  2: $text-base * 3,
+  3: $text-base * 2.5,
+  4: $text-base * 2,
+  5: $text-base * 1.5,
+  6: $text-base * 1,
+) !default;
+
+$font-weight: (
+  'thin': 100,
+  'light': 300,
+  'normal': 400,
+  'medium': 500,
+  'bold': 600,
+  'extrabold': 700,
+) !default;
+
+/* ---------------------------------------------------------- 
+    Grid & Container & BreakPoint
+ ---------------------------------------------------------- */
+// BreakPoint
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1800px,
+) !default;
+
+// Cotainer
+$container-max-widths: (
+  sm: 568px,
+  md: 880px,
+  lg: 1140px,
+  xl: 1720px,
+) !default;
+
+$col-count: 12 !default;
+$gap: 1rem !default;
+
+/* ---------------------------------------------------------- 
+    Buttons
+ ---------------------------------------------------------- */
+$btn-padding-xs: 0.75rem 2rem;
+$btn-padding-sm: 0.825rem 2rem;
+$btn-padding-md: 1rem 2rem;
+$btn-padding-lg: 1.25rem 2rem;
+$btn-padding-xl: 1.5rem 2rem;
+$btn-border-width: 1px;
+
+/* ---------------------------------------------------------- 
+    Spacing
+ ---------------------------------------------------------- */
+$spacing: 0.5rem !default;
+$space-count: 20;
