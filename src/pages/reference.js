@@ -6,10 +6,8 @@ const cx = classNames.bind(styles)
 
 const Reference = () => (
   <Layout className={cx('referencePage')}>
-    <div>
-      <h1>레풔뤈스</h1>
-      <p>Welcome to page 2</p>
-    </div>
+    <h1 className={cx('test')}>레풔뤈스</h1>
+    <p>Welcome to page 2</p>
   </Layout>
 )
 

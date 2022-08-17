@@ -8,7 +8,7 @@ const cx = classNames.bind(styles)
 
 const About = () => (
   <Layout className={cx('aboutPage')}>
-    <h1>Hi, Page?!</h1>
+    <h1 className={cx('test')}>About</h1>
     <p>about page</p>
     <Link to="/">홈화면</Link>
   </Layout>
