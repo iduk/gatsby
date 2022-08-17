@@ -18,7 +18,7 @@ const Layout = ({ children, className }) => {
   `)
 
   return (
-    <div className={cx('baseLayout')}>
+    <div className={cx('layoutBase')}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
 
       <main className={className}>{children}</main>

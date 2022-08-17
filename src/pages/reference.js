@@ -5,7 +5,7 @@ import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
 const Reference = () => (
-  <Layout className={cx('referenceWrap')}>
+  <Layout className={cx('referencePage')}>
     <div>
       <h1>레풔뤈스</h1>
       <p>Welcome to page 2</p>
