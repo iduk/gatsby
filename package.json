@@ -21,10 +21,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "gatsby": "^4.20.0",
     "gatsby-cli": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
     "gatsby-plugin-manifest": "^4.20.0",
+    "gatsby-plugin-minify-classnames": "^4.1.3",
+    "gatsby-plugin-module-local-ident-name": "^0.0.7",
     "gatsby-plugin-postcss": "^5.20.0",
     "gatsby-plugin-purgecss": "^6.1.2",
     "gatsby-plugin-sass": "^5.20.0",

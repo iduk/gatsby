@@ -31,13 +31,24 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require('sass'),
+        cssLoaderOptions: {
+          modules: {
+            localIdentName: '[local]__[hash:base64:5]',
+            exportLocalsConvention: 'camelCaseOnly',
+          },
+        },
       },
     },
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-minify-classnames',
+      options: {
+        /* gatsby-plugin-minify-classnames options here */
       },
     },
     {
