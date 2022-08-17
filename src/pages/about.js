@@ -7,7 +7,7 @@ import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
 const About = () => (
-  <Layout>
+  <Layout className={cx('aboutPage')}>
     <h1>Hi, Page?!</h1>
     <p>about page</p>
     <Link to="/">홈화면</Link>
