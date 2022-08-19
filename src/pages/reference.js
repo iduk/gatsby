@@ -6,8 +6,8 @@ const cx = classNames.bind(styles)
 
 const Reference = () => (
   <Layout className={cx('referencePage')}>
-    <h1 className={cx('test')}>레풔뤈스</h1>
-    <p>Welcome to page 2</p>
+    <h5 className={cx('test')}>래퍼런스</h5>
+    <p>래퍼런스를 찾으십니까?</p>
   </Layout>
 )
 

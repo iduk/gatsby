@@ -8,25 +8,30 @@ const cx = classNames.bind(styles)
 
 const Layout = ({ children, className }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           title
+          author
+          description
+          siteUrl
         }
       }
     }
   `)
-
+  const pageTitle = data.site.siteMetadata?.title || 'iduk'
   return (
     <div className={cx('layoutBase')}>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <header className={cx('l-header')}>
+        <Header siteTitle={pageTitle} />
+      </header>
 
-      <main className={className}>{children}</main>
+      <main className={cx('l-container', `${className}`)}>{children}</main>
 
-      <footer>
-        © {new Date().getFullYear()} &middot; Built with
+      <footer className={cx('l-footer')}>
+        © {new Date().getFullYear()} &middot; CreateBy.
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <span>{data.site.siteMetadata.author}</span>
       </footer>
     </div>
   )

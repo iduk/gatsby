@@ -1,12 +1,28 @@
 module.exports = {
   siteMetadata: {
     title: `letsGetit`,
-    description: `hahaha`,
-    author: `@iduk`,
+    description: `페이지 소개, 테스트페이지`,
+    author: `iduk`,
     siteUrl: `https://letsby.gatsbyjs.io`,
+    // nav
+    menuLinks: [
+      {
+        name: `About`,
+        url: `/about`,
+      },
+      {
+        name: `Reference`,
+        url: `/reference`,
+      },
+      {
+        name: `Blog`,
+        url: `/blog`,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,7 +30,14 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/posts-md`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
