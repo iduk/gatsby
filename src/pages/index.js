@@ -18,6 +18,23 @@ const IndexPage = () => (
       <h1>
         Welcome to <b>Gatsby!</b>
       </h1>
+
+      <div className="is-fluid">
+        <div className="row">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-6">
+            <div className="bg-primary">000</div>
+          </div>
+          <div className="col-6 col-sm-6 col-md-3 col-lg-6">
+            <div className="bg-primary">000</div>
+          </div>
+          <div className="col-6 col-sm-6 col-md-3 col-lg-6">
+            <div className="bg-primary">000</div>
+          </div>
+          <div className="col-12 col-sm-6 col-md-3 col-lg-6">
+            <div className="bg-primary">000</div>
+          </div>
+        </div>
+      </div>
     </div>
   </Layout>
 )

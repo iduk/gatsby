@@ -1,34 +1,79 @@
-@use "sass:math";
+@use 'sass:math';
 
-@mixin create-selectors($breakpoint: null) {
-    $infix: if($breakpoint == null, '', '-#{$breakpoint}');
+// grid columns
+// @mixin create-selectors($breakpoint: null) {
+//   $infix: if($breakpoint == null, '', '-#{$breakpoint}');
 
-    @for $i from 1 through $col-count {
-        .col#{$infix}-#{$i} {
-            grid-column-end: span $i;
-        }
-        .col-offset#{$infix}-#{$i} {
-            grid-column-start: $i + 1;
-        }
-        .row#{$infix}-#{$i} {
-            grid-row-end: span $i;
-        }
-        .row-offset#{$infix}-#{$i} {
-            grid-row-start: $i + 1;
-        }
+//   @for $i from 1 through $col-count {
+//     .col#{$infix}-#{$i} {
+//       grid-column-end: span $i;
+//     }
+//     .col-offset#{$infix}-#{$i} {
+//       grid-column-start: $i + 1;
+//     }
+//     .row#{$infix}-#{$i} {
+//       grid-row-end: span $i;
+//     }
+//     .row-offset#{$infix}-#{$i} {
+//       grid-row-start: $i + 1;
+//     }
+//   }
+// }
+
+// .grid-row {
+//   display: grid;
+//   grid-template-columns: repeat($col-count, 1fr);
+//   gap: $gap;
+// }
+
+// @include create-selectors;
+
+// @each $breakpoint, $width in $grid-breakpoints {
+//   @media (min-width: $width) {
+//     @include create-selectors($breakpoint);
+//   }
+// }
+
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  margin-left: calc($gap / -2);
+  margin-right: calc($gap / -2);
+}
+
+.col,
+[class^='col-'] {
+  flex: 0 1 auto;
+  box-sizing: border-box;
+  padding-left: calc($gap / 2);
+  padding-right: calc($gap / 2);
+}
+
+// col-lg-*, col-md-*
+@mixin grid-columns($breakpoint: null) {
+  $infix: if($breakpoint == null, '', '-#{$breakpoint}');
+
+  @for $i from 1 through $col-count {
+    .col#{$infix}-#{$i} {
+      flex-basis: calc(100 / ($col-count / $i)) * 1%;
     }
+  }
 }
+@include grid-columns;
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat($col-count, 1fr);
-    gap: $gap;
-}
-
-@include create-selectors;
-
+// col-*
 @each $breakpoint, $width in $grid-breakpoints {
-    @media (min-width: $width) {
-        @include create-selectors($breakpoint);
-    }
+  @media (min-width: $width) {
+    @include grid-columns($breakpoint);
+  }
+}
+
+// flex columns
+@mixin flex-direction($direction) {
+  @if $direction == column {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
 }
