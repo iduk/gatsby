@@ -6,6 +6,7 @@ import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
 const Header = ({ siteTitle }) => {
+  const [menuOpen, setMenuOpen] = React.useState(false)
   const data = useStaticQuery(
     graphql`
       query {
@@ -23,19 +24,30 @@ const Header = ({ siteTitle }) => {
   const navLinks = data.site.siteMetadata.menuLinks
 
   return (
-    <div className={cx('navbar')}>
-      <Link to={'/'} className={cx('logo')}>
-        {siteTitle}
-      </Link>
+    <header className={cx('header', 'is-fluid')}>
+      <div className={cx('navbar')}>
+        <Link to={'/'} className={cx('logo')}>
+          {siteTitle}
+        </Link>
 
-      <nav className={cx('nav')}>
-        {navLinks.map(link => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.name}</Link>
-          </React.Fragment>
-        ))}
-      </nav>
-    </div>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className={cx('navTrigger', 'btn')}
+        >
+          menu
+        </button>
+
+        <nav className={cx('nav', `${menuOpen ? 'open' : ''}`)}>
+          {navLinks.map(link => (
+            <React.Fragment key={link.url}>
+              <Link className={cx('navLink')} to={link.url}>
+                {link.name}
+              </Link>
+            </React.Fragment>
+          ))}
+        </nav>
+      </div>
+    </header>
   )
 }
 

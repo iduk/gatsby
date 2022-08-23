@@ -52,6 +52,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require('postcss-import'),
+          require('postcss-preset-env')({
+            stage: 0,
+          }),
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         cssLoaderOptions: {
@@ -62,18 +73,12 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-minify-classnames',
-      options: {
-        /* gatsby-plugin-minify-classnames options here */
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-minify-classnames',
+    //   options: {
+    //     /* gatsby-plugin-minify-classnames options here */
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-purgecss`,
       content: ['src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}'],

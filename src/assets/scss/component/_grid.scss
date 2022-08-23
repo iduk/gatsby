@@ -68,12 +68,3 @@
     @include grid-columns($breakpoint);
   }
 }
-
-// flex columns
-@mixin flex-direction($direction) {
-  @if $direction == column {
-    flex-direction: column;
-  } @else {
-    flex-direction: row;
-  }
-}

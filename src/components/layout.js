@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import * as styles from './layout.module.scss'
 import classNames from 'classnames/bind'
+import Seo from './seo'
 const cx = classNames.bind(styles)
 
 const Layout = ({ children, className }) => {
@@ -21,24 +22,25 @@ const Layout = ({ children, className }) => {
   `)
   const pageTitle = data.site.siteMetadata?.title || 'iduk'
   return (
-    <div className={cx('layoutBase')}>
-      <header className={cx('l-header')}>
+    <>
+      <div className={cx('layout')}>
         <Header siteTitle={pageTitle} />
-      </header>
 
-      <main className={cx('l-container', `${className}`)}>{children}</main>
+        <main>{children}</main>
 
-      <footer className={cx('l-footer')}>
-        © {new Date().getFullYear()} &middot; CreateBy.
-        {` `}
-        <span>{data.site.siteMetadata.author}</span>
-      </footer>
-    </div>
+        <footer>
+          © {new Date().getFullYear()} CreateBy.
+          <span>{data.site.siteMetadata.author}</span>
+        </footer>
+      </div>
+    </>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+export const Head = () => <Seo />
 
 export default Layout
