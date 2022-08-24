@@ -5,7 +5,7 @@ $theme: (
   'light': (
     'colors': $color-palette,
     'grays': (
-      'gray-0': $light,
+      'gray-0': #fff,
       'gray-1': $gray-100,
       'gray-2': $gray-200,
       'gray-3': $gray-300,
@@ -20,7 +20,7 @@ $theme: (
   'dark': (
     'colors': $color-palette,
     'grays': (
-      'gray-0': $dark,
+      'gray-0': #111,
       'gray-1': $gray-900,
       'gray-2': $gray-800,
       'gray-3': $gray-700,

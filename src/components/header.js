@@ -50,7 +50,7 @@ const Header = ({ siteTitle }) => {
               ))}
             </nav>
           </div>
-          <button className="dark-switcher" onClick={theme.toggleDark}>
+          <button className={cx('themeSwitch')} onClick={theme.toggleDark}>
             {theme.dark ? 'Light mode ☀' : 'Dark mode'}
           </button>
         </header>

@@ -5,7 +5,7 @@ import * as styles from './index.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const indexList = [
+const indexlist = [
   {
     id: 1,
     content:
@@ -58,11 +58,11 @@ const indexList = [
 ]
 
 const IndexPage = () => (
-  <Layout>
+  <Layout className={cx('index')}>
     <section className="is-fluid">
       <ul className={cx('indexList')}>
-        {indexList.map(item => (
-          <li key={item.id} className={cx('item')} key={item.id}>
+        {indexlist.map(item => (
+          <li key={item.id} className={cx('item')}>
             <h1>{item.id}</h1>
             <p>{item.content}</p>
           </li>

@@ -22,7 +22,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
+    {
+      resolve:`gatsby-transformer-sharp`
+      options: {
+        defaultQuality: 50,
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

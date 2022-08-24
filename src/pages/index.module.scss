@@ -20,6 +20,7 @@
     background-size: cover;
     background-blend-mode: luminosity;
     height: 40vh;
+    overflow: hidden;
 
     @media (min-width: 901px) {
       &:nth-child(1) {
