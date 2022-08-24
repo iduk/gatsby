@@ -73,21 +73,16 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-minify-classnames',
-    //   options: {
-    //     /* gatsby-plugin-minify-classnames options here */
-    //   },
-    // },
     {
-      resolve: `gatsby-plugin-purgecss`,
-      content: ['src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}'],
+      resolve: 'gatsby-plugin-minify-classnames',
       options: {
-        printRejected: true,
-        purgeCSSOptions: {
-          // https://purgecss.com/configuration.html#options
-          // safelist: ['safelist'], // Don't remove this selector
-        },
+        /* gatsby-plugin-minify-classnames options here */
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
       },
     },
   ],
