@@ -41,13 +41,15 @@ const Header = ({ siteTitle }) => {
             </button>
 
             <nav className={cx('nav', `${menuOpen ? 'open' : ''}`)}>
-              {navLinks.map(link => (
-                <React.Fragment key={link.url}>
-                  <Link className={cx('navLink')} to={link.url}>
-                    {link.name}
-                  </Link>
-                </React.Fragment>
-              ))}
+              <div className={cx('navList')}>
+                {navLinks.map(link => (
+                  <React.Fragment key={link.url}>
+                    <Link className={cx('navLink')} to={link.url}>
+                      {link.name}
+                    </Link>
+                  </React.Fragment>
+                ))}
+              </div>
             </nav>
           </div>
           <button className={cx('themeSwitch')} onClick={theme.toggleDark}>

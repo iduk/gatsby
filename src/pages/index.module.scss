@@ -15,12 +15,28 @@
   .item {
     cursor: pointer;
     transition: all 0.2s;
-    background-color: var(--gray-2);
+    color: var(--gray-0);
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: luminosity;
     height: 40vh;
     overflow: hidden;
+    background-color: var(--primary);
+    position: relative;
+
+    &:nth-child(2) {
+      background-color: var(--secondary);
+      // &::before {
+      //   content: 'idukidukiduk';
+      //   font-family: 'Boxwood';
+      //   font-size: 20vw;
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   left: 0;
+      //   bottom: 0;
+      // }
+    }
 
     @media (min-width: 901px) {
       &:nth-child(1) {
@@ -32,11 +48,11 @@
     }
 
     &:nth-child(1):is(:focus, :hover) {
-      background-color: blue;
+      // background-color: blue;
       background-image: url(../assets/images/3d_render.png);
     }
     &:nth-child(5):is(:focus, :hover) {
-      background-color: gold;
+      // background-color: gold;
       background-image: url(../assets/images/photo.jpeg);
     }
   }

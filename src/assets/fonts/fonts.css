@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
+@font-face {
+  font-family: 'Boxwood';
+  font-weight: 400;
+  src: url(./mazeletter-boxwood.woff2) format('woff2'),
+    url(./mazeletter-boxwood.woff) format('woff'),
+    url(./mazeletter-boxwood.ttf) format('truetype');
+}
+
 /* @font-face {
   font-family: 'NanumBarunGothic';
   font-weight: 400;

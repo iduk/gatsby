@@ -45,8 +45,8 @@ module.exports = {
         name: `letsby blog`,
         short_name: `letsby`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `var(--primary)`,
+        theme_color: `var(--primary)`,
         display: `minimal-ui`,
         icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
