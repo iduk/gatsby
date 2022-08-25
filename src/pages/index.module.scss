@@ -44,6 +44,12 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+    &:nth-child(2):is(:focus, :hover) {
+      background-image: url(https://images.unsplash.com/photo-1660912663223-b57c233c15a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
+    }
+    &:nth-child(3):is(:focus, :hover) {
+      background-image: url(https://images.unsplash.com/photo-1560406146-78f8cb5e0fbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80);
+    }
     &:nth-child(5):is(:focus, :hover) {
       mask-image: url('../assets/images/blob.svg');
       mask-size: cover;
