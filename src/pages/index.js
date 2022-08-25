@@ -62,7 +62,7 @@ const IndexPage = () => (
     <section className="is-fluid">
       <ul className={cx('indexList')}>
         {indexlist.map(item => (
-          <li key={item.id} className={cx('item')}>
+          <li key={item.id} className={cx('item', item.id == 1 && 'ex')}>
             <h1>{item.id}</h1>
             <p>{item.content}</p>
           </li>

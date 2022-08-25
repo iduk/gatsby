@@ -13,6 +13,7 @@
   }
 
   .item {
+    position: relative;
     cursor: pointer;
     transition: all 0.2s;
     color: var(--gray-0);
@@ -21,22 +22,8 @@
     background-blend-mode: luminosity;
     height: 40vh;
     overflow: hidden;
-    background-color: var(--primary);
+    background-color: var(--gray-9);
     position: relative;
-
-    &:nth-child(2) {
-      background-color: var(--secondary);
-      // &::before {
-      //   content: 'idukidukiduk';
-      //   font-family: 'Boxwood';
-      //   font-size: 20vw;
-      //   position: absolute;
-      //   top: 0;
-      //   right: 0;
-      //   left: 0;
-      //   bottom: 0;
-      // }
-    }
 
     @media (min-width: 901px) {
       &:nth-child(1) {
@@ -47,12 +34,19 @@
       }
     }
 
-    &:nth-child(1):is(:focus, :hover) {
-      // background-color: blue;
+    &.ex {
+      mask-image: url('../assets/images/blob.svg');
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+    }
+    &.ex:is(:focus, :hover) {
       background-image: url(../assets/images/3d_render.png);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     &:nth-child(5):is(:focus, :hover) {
-      // background-color: gold;
+      mask-image: url('../assets/images/blob.svg');
+      mask-size: cover;
       background-image: url(../assets/images/photo.jpeg);
     }
   }
