@@ -1,6 +1,6 @@
 ---
 title: '포스트먹고싶다'
-slug: '/blog/eat'
+slug: 'eat'
 date: '2022-08-15'
 ---
 

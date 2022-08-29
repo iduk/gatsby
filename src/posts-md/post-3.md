@@ -1,6 +1,6 @@
 ---
 title: '세번째 포스트'
-slug: '/blog/three'
+slug: 'three'
 date: '2022-08-13'
 ---
 

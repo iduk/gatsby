@@ -23,23 +23,23 @@ const Layout = ({ children, className }) => {
   `)
   const pageTitle = data.site.siteMetadata?.title || 'iduk'
   return (
-    <ThemeContext.Consumer>
-      {theme => (
-        <div
-          className={cx('layout')}
-          data-theme={theme.dark ? 'dark' : 'light'}
-        >
-          <Header siteTitle={pageTitle} />
+    // <ThemeContext.Consumer>
+    //   {theme => (
+    <div
+      className={cx('layout')}
+      // data-theme={theme.dark ? 'dark' : 'light'}
+    >
+      <Header siteTitle={pageTitle} />
 
-          <main>{children}</main>
+      <main>{children}</main>
 
-          <footer>
-            © {new Date().getFullYear()} CreateBy.
-            <span>{data.site.siteMetadata.author}</span>
-          </footer>
-        </div>
-      )}
-    </ThemeContext.Consumer>
+      <footer>
+        © {new Date().getFullYear()} CreateBy.
+        <span>{data.site.siteMetadata.author}</span>
+      </footer>
+    </div>
+    //   )}
+    // </ThemeContext.Consumer>
   )
 }
 

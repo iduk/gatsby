@@ -5,8 +5,10 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   color: var(--gray-9);
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .logo {
@@ -32,9 +34,14 @@
     background-color: var(--secondary);
     color: var(--gray-9);
   }
-  .navLink {
-    padding: 1rem;
-    color: inherit;
+  @media (min-width: 600px) {
+    .navLink {
+      display: block;
+      color: inherit;
+      font-size: 4vw;
+      line-height: 1;
+      text-align: right;
+    }
   }
 }
 
@@ -58,13 +65,8 @@
     align-items: center;
   }
   .navLink {
-    display: block;
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
   }
-}
-
-.themeSwitch {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 10;
 }

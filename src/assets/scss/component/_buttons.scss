@@ -1,22 +1,30 @@
 // Buttons
 %btn {
-  display: inline-block;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-style: solid;
+  border-width: 0;
   appearance: none;
   box-shadow: none;
   box-sizing: border-box;
-  line-height: normal;
+  background-color: transparent;
+  border-width: 1px;
   border-color: transparent;
-  border-width: $btn-border-width;
-  font-size: $text-base;
-  transition: background 0.2s ease;
-  cursor: pointer
+  transition: all 0.2s ease;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  padding: $btn-padding-md;
+  cursor: pointer;
 }
 
 // bg,border,invert-color & hover,focus
 @mixin button-theme($color-palette) {
   @each $name, $color in $color-palette {
-    &-#{''+$name} {
+    &-#{'' + $name} {
       background-color: #{$color};
       border-color: #{$color};
       @include color-invert($color);
@@ -32,8 +40,16 @@
   }
 }
 
+@mixin button-sizing($btn-sizes) {
+  @each $name, $size in $btn-sizes {
+    &-#{'' + $name} {
+      padding: $size;
+    }
+  }
+}
 
 .btn {
   @extend %btn;
   @include button-theme($color-palette);
+  @include button-sizing($btn-sizes);
 }

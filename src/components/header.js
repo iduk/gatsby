@@ -1,9 +1,10 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import ThemeContext from '../context/ThemeContext'
+// import ThemeContext from '../context/ThemeContext'
 import * as styles from './header.module.scss'
 import classNames from 'classnames/bind'
+import ThemeToggle from './themeToggle'
 const cx = classNames.bind(styles)
 
 const Header = ({ siteTitle }) => {
@@ -25,39 +26,40 @@ const Header = ({ siteTitle }) => {
   const navLinks = data.site.siteMetadata.menuLinks
 
   return (
-    <ThemeContext.Consumer>
-      {theme => (
-        <header className={cx('header', 'is-fluid')}>
-          <div className={cx('navbar')}>
-            <Link to={'/'} className={cx('logo')}>
-              {siteTitle}
-            </Link>
+    // <ThemeContext.Consumer>
+    //   {theme => (
+    <header className={cx('header', 'is-fluid')}>
+      <div className={cx('navbar')}>
+        <Link to={'/'} className={cx('logo')}>
+          {siteTitle}
+        </Link>
 
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className={cx('navTrigger', 'btn')}
-            >
-              menu
-            </button>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className={cx('navTrigger', 'btn', 'btn-primary')}
+        >
+          menu
+        </button>
 
-            <nav className={cx('nav', `${menuOpen ? 'open' : ''}`)}>
-              <div className={cx('navList')}>
-                {navLinks.map(link => (
-                  <React.Fragment key={link.url}>
-                    <Link className={cx('navLink')} to={link.url}>
-                      {link.name}
-                    </Link>
-                  </React.Fragment>
-                ))}
-              </div>
-            </nav>
+        <nav className={cx('nav', `${menuOpen ? 'open' : ''}`)}>
+          <div className={cx('navList')}>
+            {navLinks.map(link => (
+              <React.Fragment key={link.url}>
+                <Link className={cx('navLink')} to={link.url}>
+                  {link.name}
+                </Link>
+              </React.Fragment>
+            ))}
           </div>
-          <button className={cx('themeSwitch')} onClick={theme.toggleDark}>
+        </nav>
+      </div>
+      {/* <button className={cx('themeSwitch')} onClick={theme.toggleDark}>
             {theme.dark ? 'Light Mode 🌈' : 'Dark Mode 🌙'}
-          </button>
-        </header>
-      )}
-    </ThemeContext.Consumer>
+          </button> */}
+      <ThemeToggle />
+    </header>
+    //   )}
+    // </ThemeContext.Consumer>
   )
 }
 

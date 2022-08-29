@@ -104,15 +104,37 @@ $container-max-widths: (
 $col-count: 12 !default;
 $gap: 1rem !default;
 
+$border-width: 1px;
+$border-width-lg: 2px;
+
+$rounded: 10px;
+$rounded-xs: 4px;
+$rounded-sm: 6px;
+$rounded-lg: 10px;
+$rounded-full: 30px;
+$rounded-0: 0;
+
+$rounded-sizes: (
+  '': $rounded,
+  '-xs': $rounded-xs,
+  '-sm': $rounded-sm,
+  '-lg': $rounded-lg,
+  '-full': $rounded-full,
+  '-0': $rounded-0,
+) !default;
+
 /* ---------------------------------------------------------- 
     Buttons
  ---------------------------------------------------------- */
-$btn-padding-xs: 0.75rem 2rem;
-$btn-padding-sm: 0.825rem 2rem;
-$btn-padding-md: 1rem 2rem;
-$btn-padding-lg: 1.25rem 2rem;
-$btn-padding-xl: 1.5rem 2rem;
-$btn-border-width: 1px;
+$btn-padding-sm: 4px 8px !default;
+$btn-padding-md: 8px 16px !default;
+$btn-padding-lg: 12px 20px !default;
+
+$btn-sizes: (
+  'sm': $btn-padding-sm,
+  'md': $btn-padding-md,
+  'lg': $btn-padding-lg,
+);
 
 /* ---------------------------------------------------------- 
     Spacing

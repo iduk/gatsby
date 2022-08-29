@@ -1,6 +1,6 @@
 ---
 title: '포번째 포스트'
-slug: '/blog/four'
+slug: 'four'
 date: '2022-08-14'
 ---
 

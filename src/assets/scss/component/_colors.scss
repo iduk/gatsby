@@ -1,9 +1,9 @@
-@use "sass:color";
+@use 'sass:color';
 
 :root {
-    @each $name, $value in $color-palette{
-        --#{''+$name}: #{$value};      
-    }
+  @each $name, $value in $color-palette {
+    --#{''+$name}: #{$value};
+  }
 }
 
 // Color Invert
@@ -21,14 +21,11 @@
   }
 }
 
-
 $color-property: (
   bg: background-color,
-  color: color,
-  border: border-color
+  text: color,
+  border: border-color,
 );
-
-
 
 @each $name, $value in $color-palette {
   @each $selector, $property in $color-property {
@@ -42,7 +39,6 @@ $color-property: (
     }
   }
 }
-
 
 @each $name, $value in $grays {
   @each $selector, $property in $color-property {
