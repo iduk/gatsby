@@ -6,7 +6,7 @@ const PostLink = ({ post }) => (
     <Link to={`${post.frontmatter.slug}`}>
       <h1>{post.frontmatter.title}</h1>
       <p>{post.frontmatter.date}</p>
-      <p>{post.frontmatter.excerpt}</p>
+      
     </Link>
   </div>
 )
