@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import * as styles from './index.module.scss'
 import classNames from 'classnames/bind'
@@ -76,12 +75,6 @@ const IndexPage = () => {
 
   return (
     <Layout className={cx('index')}>
-      <StaticImage
-        src="../assets/images/3d_render@2x.png"
-        loading="lazy"
-        width={100}
-        alt="aaa"
-      />
       <section className="is-fluid">
         <ul className={cx('indexList')}>
           {indexlist.map(item => (
