@@ -10,7 +10,7 @@ export default function BlogPostTemplate({ data: { markdownRemark } }) {
     <Layout>
       <Seo title={frontmatter.title} />
       <Link className="btn text-primary" to="/blog">
-        블로그페이지 보기
+        Back to Blog
       </Link>
       <header>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -24,14 +24,14 @@ export default function BlogPostTemplate({ data: { markdownRemark } }) {
   )
 }
 
-export const pageQuery = graphql`
+export const BlogPostQuery = graphql`
   query ($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
-      excerpt(truncate: true)
+      excerpt(format: PLAIN, pruneLength: 100, truncate: true)
       frontmatter {
-        date(formatString: "YYYY-MM-DD")
         title
+        date(formatString: "YYYY-MM-DD")
       }
     }
   }

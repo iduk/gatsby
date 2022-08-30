@@ -5,7 +5,7 @@ import Header from './header'
 import * as styles from './layout.module.scss'
 import classNames from 'classnames/bind'
 import Seo from './seo'
-import ThemeContext from '../context/ThemeContext'
+import ThemeToggle from './themeToggle'
 const cx = classNames.bind(styles)
 
 const Layout = ({ children, className }) => {
@@ -23,12 +23,7 @@ const Layout = ({ children, className }) => {
   `)
   const pageTitle = data.site.siteMetadata?.title || 'iduk'
   return (
-    // <ThemeContext.Consumer>
-    //   {theme => (
-    <div
-      className={cx('layout')}
-      // data-theme={theme.dark ? 'dark' : 'light'}
-    >
+    <div className={cx('layout')}>
       <Header siteTitle={pageTitle} />
 
       <main>{children}</main>
@@ -37,9 +32,9 @@ const Layout = ({ children, className }) => {
         © {new Date().getFullYear()} CreateBy.
         <span>{data.site.siteMetadata.author}</span>
       </footer>
+
+      <ThemeToggle />
     </div>
-    //   )}
-    // </ThemeContext.Consumer>
   )
 }
 

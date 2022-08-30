@@ -14,6 +14,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
         __html: `(function() {  
             function setTheme(theme) {
               window.__theme = theme;
+              document.body.setAttribute('data-theme', theme);
 
               if (theme === 'dark') {
                 document.body.setAttribute('data-theme', 'dark')

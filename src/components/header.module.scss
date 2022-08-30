@@ -34,13 +34,16 @@
     background-color: var(--secondary);
     color: var(--gray-9);
   }
-  @media (min-width: 600px) {
+  @media screen and (min-width: 601px) {
     .navLink {
       display: block;
       color: inherit;
       font-size: 4vw;
       line-height: 1;
       text-align: right;
+    }
+    .navLink.active {
+      text-decoration: underline;
     }
   }
 }
@@ -50,7 +53,7 @@
   display: none;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .nav {
     display: none;
   }

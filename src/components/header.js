@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 // import ThemeContext from '../context/ThemeContext'
 import * as styles from './header.module.scss'
 import classNames from 'classnames/bind'
-import ThemeToggle from './themeToggle'
+
 const cx = classNames.bind(styles)
 
 const Header = ({ siteTitle }) => {
@@ -45,7 +45,11 @@ const Header = ({ siteTitle }) => {
           <div className={cx('navList')}>
             {navLinks.map(link => (
               <React.Fragment key={link.url}>
-                <Link className={cx('navLink')} to={link.url}>
+                <Link
+                  className={cx('navLink')}
+                  to={link.url}
+                  activeClassName={cx('active')}
+                >
                   {link.name}
                 </Link>
               </React.Fragment>
@@ -53,10 +57,6 @@ const Header = ({ siteTitle }) => {
           </div>
         </nav>
       </div>
-      {/* <button className={cx('themeSwitch')} onClick={theme.toggleDark}>
-            {theme.dark ? 'Light Mode 🌈' : 'Dark Mode 🌙'}
-          </button> */}
-      <ThemeToggle />
     </header>
     //   )}
     // </ThemeContext.Consumer>

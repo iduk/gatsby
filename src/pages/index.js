@@ -68,15 +68,7 @@ const indexlist = [
 ]
 
 const IndexPage = () => {
-  const [isHover, setIsHover] = React.useState()
-  const hoverRef = React.useRef(isHover)
-
-  const handleMouseOver = () => {
-    setIsHover(true)
-  }
-  const handleMouseOut = () => {
-    setIsHover(false)
-  }
+  // const [isHover, setIsHover] = React.useState()
 
   // React.useEffect(() => {
 
@@ -84,27 +76,21 @@ const IndexPage = () => {
 
   return (
     <Layout className={cx('index')}>
+      <StaticImage
+        src="../assets/images/3d_render@2x.png"
+        loading="lazy"
+        width={100}
+        alt="aaa"
+      />
       <section className="is-fluid">
         <ul className={cx('indexList')}>
           {indexlist.map(item => (
-            <li
-              key={item.id}
-              onMouseOver={handleMouseOver}
-              onMouseOut={handleMouseOut}
-              className={cx('item')}
-            >
+            <li key={item.id} className={cx('item')}>
               <h1>{item.id}</h1>
               <p>{item.content}</p>
             </li>
           ))}
         </ul>
-
-        <div
-          ref={hoverRef}
-          className={cx('focusImg', `${isHover ? 'active' : ''}`)}
-        >
-          <StaticImage src={'../assets/images/3d_render.avif'} alt="image" />
-        </div>
       </section>
     </Layout>
   )
