@@ -13,7 +13,12 @@ const About = () => {
       <p>about page</p>
       <Link to="/">홈화면</Link>
 
-      <StaticImage src="../assets/images/example.png" width={200} alt="" />
+      <StaticImage
+        loading="lazy"
+        src="../assets/images/pixelduk.png"
+        width={300}
+        alt=""
+      />
     </Layout>
   )
 }
