@@ -4,6 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import * as styles from './header.module.scss'
 import classNames from 'classnames/bind'
 import ThemeToggle from './themeToggle'
+import pixelDuk from '../assets/images/pixelduk.svg'
 
 const cx = classNames.bind(styles)
 
@@ -29,13 +30,13 @@ const Header = ({ siteTitle }) => {
     <header className={cx('header', 'is-fluid')}>
       <ThemeToggle />
       <div className={cx('navbar')}>
-        <Link to={'/'} className={cx('logo')}>
-          {siteTitle}
+        <Link to={'/'} className={cx('logo')} title={siteTitle}>
+          <img src={pixelDuk} width={60} alt="logo" />
         </Link>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={cx('navTrigger', 'btn', 'btn-primary')}
+          className={cx('navTrigger', 'btn')}
         >
           menu
         </button>

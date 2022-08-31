@@ -1,4 +1,4 @@
-.index-list {
+.indexWrap {
   position: relative;
   display: grid;
   gap: 1px 1px;
@@ -12,7 +12,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .item {
+  .list {
     position: relative;
     cursor: pointer;
     transition: all 0.2s linear;
@@ -49,12 +49,19 @@
     // &:nth-child(2):is(:focus, :hover) {
     //   background-image: url(https://images.unsplash.com/photo-1660912663223-b57c233c15a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
     // }
-    &:nth-child(3) {
-      background-image: url(../assets/images/pixelduk.svg);
+
+    &:nth-child(3) .item {
+      height: 100%;
       background-size: cover;
+      background-color: var(--primary);
+      background-image: url(../assets/images/pixelduk.svg);
+      background-blend-mode: screen;
+      transform-style: preserve-3d;
+      transform: rotateY(0);
+      transition: transform 0.2s linear;
 
       &:is(:focus, :hover) {
-        background-blend-mode: luminosity;
+        background-blend-mode: normal;
       }
     }
   }

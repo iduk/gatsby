@@ -25,14 +25,31 @@ export default function BlogPostTemplate({ data: { markdownRemark } }) {
 }
 
 export const BlogPostQuery = graphql`
-  query ($id: String!) {
+  query BlogPostQuery($id: String) {
     markdownRemark(id: { eq: $id }) {
       html
       excerpt(format: PLAIN, pruneLength: 100, truncate: true)
       frontmatter {
         title
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "YYYY-MM-DD", locale: "ko-KR")
+        slug
       }
     }
   }
 `
+// export const pageQuery = graphql`
+//   query BlogPostBySlug($slug: String!) {
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       html
+//       excerpt(format: PLAIN, pruneLength: 100, truncate: true)
+//       frontmatter {
+//         title
+//         cover
+//         date(formatString: "MMMM DD, YYYY", locale: "ko-KR")
+//         categories
+//         tags
+//         slug
+//       }
+//     }
+//   }
+// `

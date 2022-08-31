@@ -76,11 +76,13 @@ const IndexPage = () => {
   return (
     <Layout className={cx('index')}>
       <section className="is-fluid">
-        <ul className={cx('indexList')}>
+        <ul className={cx('indexWrap')}>
           {indexlist.map(item => (
-            <li key={item.id} className={cx('item')}>
-              <h1>{item.id}</h1>
-              <p>{item.content}</p>
+            <li key={item.id} className={cx('list')}>
+              <div className={cx('item')}>
+                <h1>{item.id}</h1>
+                <p>{item.content}</p>
+              </div>
             </li>
           ))}
         </ul>
