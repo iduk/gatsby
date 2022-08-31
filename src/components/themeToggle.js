@@ -12,7 +12,6 @@ const ThemeToggle = () => {
   let websiteTheme
   if (typeof window !== `undefined`) {
     websiteTheme = window.__theme
-    document.body.setAttribute('data-theme', window.__theme)
   }
   useEffect(() => {
     setTheme(window.__theme)

@@ -39,6 +39,7 @@ function Seo({ description, title, children }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="theme-color" content="var(--theme-bg)" />
+      <meta name="color-scheme" content="dark light" />
 
       {children}
     </>

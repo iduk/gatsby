@@ -5,7 +5,6 @@ import Header from './header'
 import * as styles from './layout.module.scss'
 import classNames from 'classnames/bind'
 import Seo from './seo'
-import ThemeToggle from './themeToggle'
 const cx = classNames.bind(styles)
 
 const Layout = ({ children, className }) => {
@@ -32,8 +31,6 @@ const Layout = ({ children, className }) => {
         © {new Date().getFullYear()} CreateBy.
         <span>{data.site.siteMetadata.author}</span>
       </footer>
-
-      <ThemeToggle />
     </div>
   )
 }

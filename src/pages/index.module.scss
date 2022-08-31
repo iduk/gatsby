@@ -15,7 +15,7 @@
   .item {
     position: relative;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s linear;
     color: var(--theme-text);
     background-color: var(--theme-bg);
     background-repeat: no-repeat;

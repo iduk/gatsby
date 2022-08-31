@@ -1,9 +1,9 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-// import ThemeContext from '../context/ThemeContext'
 import * as styles from './header.module.scss'
 import classNames from 'classnames/bind'
+import ThemeToggle from './themeToggle'
 
 const cx = classNames.bind(styles)
 
@@ -26,9 +26,8 @@ const Header = ({ siteTitle }) => {
   const navLinks = data.site.siteMetadata.menuLinks
 
   return (
-    // <ThemeContext.Consumer>
-    //   {theme => (
     <header className={cx('header', 'is-fluid')}>
+      <ThemeToggle />
       <div className={cx('navbar')}>
         <Link to={'/'} className={cx('logo')}>
           {siteTitle}
@@ -58,8 +57,6 @@ const Header = ({ siteTitle }) => {
         </nav>
       </div>
     </header>
-    //   )}
-    // </ThemeContext.Consumer>
   )
 }
 
