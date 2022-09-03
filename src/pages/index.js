@@ -28,7 +28,7 @@ const indexlist = [
   },
   {
     id: 4,
-    title: 'variables',
+    title: '',
     content:
       '흙으로 이런 쉬이 까닭입니다. 나는 한 헤일 다 아름다운 쉬이 별을 별 이름과, 까닭입니다. 헤는 하나 하나에 이름과 봅니다. 마디씩 토끼, 아침이 까닭입니다.',
     thumb: 'https://source.unsplash.com/600x600/?city',
