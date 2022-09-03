@@ -42,9 +42,9 @@ const Header = ({ siteTitle }) => {
         </button>
 
         <nav className={cx('nav', `${menuOpen ? 'open' : ''}`)}>
-          <div className={cx('navList')}>
+          <ul className={cx('navList')}>
             {navLinks.map(link => (
-              <React.Fragment key={link.url}>
+              <li key={link.url}>
                 <Link
                   className={cx('navLink')}
                   to={link.url}
@@ -52,9 +52,9 @@ const Header = ({ siteTitle }) => {
                 >
                   {link.name}
                 </Link>
-              </React.Fragment>
+              </li>
             ))}
-          </div>
+          </ul>
         </nav>
       </div>
     </header>
