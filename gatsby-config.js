@@ -81,10 +81,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
+        additionalData: `
+          @import 'src/assets/scss/_variables.scss';
+          @import 'src/assets/scss/_mixins.scss';
+        `,
         cssLoaderOptions: {
+          camelCase: false,
           modules: {
             localIdentName: '[local]__[hash:base64:5]',
-            exportLocalsConvention: 'camelCaseOnly',
+            // exportLocalsConvention: 'camelCaseOnly',
+          },
+        },
+        useResolveUrlLoader: {
+          options: {
+            debug: true,
           },
         },
       },
