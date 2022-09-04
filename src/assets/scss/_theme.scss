@@ -43,7 +43,7 @@ $transition-bg: all 0.1s cubic-bezier(0.185, 0.475, 0.895, 0.39);
   $theme-mode: (
     'bg': map-get($grays, 'gray-0'),
     'border': map-get($grays, 'gray-3'),
-    'border-focus': map-get($grays, 'gray-4'),
+    'layer': map-get($grays, 'gray-2'),
     'text': map-get($grays, 'gray-8'),
     'heading': map-get($grays, 'gray-9'),
   );

@@ -37,7 +37,19 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -56,6 +68,7 @@ module.exports = {
         },
       },
     },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

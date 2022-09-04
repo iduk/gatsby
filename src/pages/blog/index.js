@@ -11,11 +11,15 @@ const Blog = ({
 }) => {
   const PostsList = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => (
+      <li key={edge.node.id} style={{ padding: '1rem 0' }}>
+        <PostLink post={edge.node} />
+      </li>
+    ))
 
   return (
     <Layout>
-      <div>{PostsList}</div>
+      <ul>{PostsList}</ul>
     </Layout>
   )
 }
@@ -31,8 +35,16 @@ export const AllBlogPosts = graphql`
           excerpt(format: PLAIN, pruneLength: 100, truncate: true)
           frontmatter {
             title
-            date(formatString: "YYYY-MM-DD", locale: "ko-KR")
+            date(formatString: "YYYYMMDD", locale: "ko-KR")
             slug
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+                gatsbyImageData
+              }
+            }
           }
         }
       }

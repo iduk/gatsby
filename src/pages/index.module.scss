@@ -1,19 +1,23 @@
 .indexWrap {
   position: relative;
   display: grid;
-  gap: 1px 1px;
+  gap: 1px;
   grid-auto-rows: auto;
   grid-template-columns: repeat(2, 1fr);
+  outline: 0.5px solid var(--theme-border);
 
   // min ~
   @include breakepoint-up(sm) {
     grid-template-columns: repeat(2, 1fr);
   }
   @include breakepoint-up(md) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   @include breakepoint-up(lg) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakepoint-up(xl) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   --depth: 1rem;
@@ -26,7 +30,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    outline: 1px solid var(--theme-border);
+
+    outline: 0.5px solid var(--theme-border);
     transition: transform 0.3s;
     background-blend-mode: luminosity;
 
@@ -43,8 +48,9 @@
       opacity: 0;
       z-index: -1;
       position: absolute;
-      background-color: darken($primary, 15%);
-      // outline: 1px solid var(--theme-border);
+      background-color: var(--theme-bg);
+      outline: 0.5px solid var(--theme-border);
+      box-sizing: border-box;
     }
 
     &:before {
@@ -62,26 +68,19 @@
       height: 100%;
       transform-origin: left;
       transform: skewY(-45deg);
-      background-color: darken($primary, 10%);
     }
 
     &:hover {
       z-index: 1;
       transform: translate(var(--depth), calc(var(--depth) * -1));
-      background-color: var(--primary);
-      color: var(--light);
-      outline-color: transparent;
+      background-color: var(--theme-layer);
+      // color: var(--light);
 
       &:before,
       &:after {
         opacity: 1;
       }
     }
-  }
-
-  // grid number
-  [data='4'] {
-    background-image: url(../assets/images/pixelduk.svg);
   }
 }
 
@@ -95,6 +94,11 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+// items
+[data='4'] {
+  background-image: url(../assets/images/pixelduk.svg);
 }
 
 // children

@@ -74,6 +74,20 @@ const indexlist = [
       '무덤 추억과 아스라히 있습니다. 했던 나의 아름다운 거외다. 하나에 하나에 덮어 봅니다. 무엇인지 새겨지는 하늘에는 별 별을 무성할 계십니다.',
     thumb: 'https://source.unsplash.com/600x600/?program',
   },
+  {
+    id: 11,
+    title: '',
+    content:
+      '무덤 추억과 아스라히 있습니다. 했던 나의 아름다운 거외다. 하나에 하나에 덮어 봅니다. 무엇인지 새겨지는 하늘에는 별 별을 무성할 계십니다.',
+    thumb: 'https://source.unsplash.com/600x600/?program',
+  },
+  {
+    id: 12,
+    title: '',
+    content:
+      '무덤 추억과 아스라히 있습니다. 했던 나의 아름다운 거외다. 하나에 하나에 덮어 봅니다. 무엇인지 새겨지는 하늘에는 별 별을 무성할 계십니다.',
+    thumb: 'https://source.unsplash.com/600x600/?program',
+  },
 ]
 
 const IndexPage = () => {
@@ -86,15 +100,36 @@ const IndexPage = () => {
   return (
     <Layout className={cx('index')}>
       <section className="is-fluid">
-        <ul className={cx('indexWrap')}>
-          {indexlist.map(item => (
-            <li key={item.id} data={item.id} className={cx('list')}>
-              <div className={cx('item')}>
-                <h1 className={cx('title')}>{item.title}</h1>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="row">
+          <div className="col-12 col-md-3 col-lg-2 pb-5">
+            <h6>Welcome to LetsBy Website.</h6>
+            <p className="my-3 text-sm">
+              Nulla dolor ante, facilisis ornare mi eget, lobortis pretium
+              dolor. Vestibulum molestie lobortis pellentesque. Nam dictum,
+              lacus sed eleifend consectetur, est nibh placerat tellus, in
+              laoreet neque metus in purus. Aliquam iaculis nunc vel dapibus
+              aliquet. Donec non sapien aliquet, luctus arcu eget, luctus
+              libero. Praesent faucibus accumsan consequat. Ut sit amet viverra
+              urna. Etiam sit amet semper turpis, at vestibulum urna.
+            </p>
+            <p>
+              Cras consectetur, lorem sit amet facilisis accumsan, leo nisi
+              accumsan ex, ut placerat urna arcu quis neque. Curabitur in nunc
+              eget ex facilisis dictum.
+            </p>
+          </div>
+          <div className="col-12 col-md-9 col-lg-10">
+            <ul className={cx('indexWrap')}>
+              {indexlist.map(item => (
+                <li key={item.id} className={cx('list')}>
+                  <div data={item.id} className={cx('item')}>
+                    <h1 className={cx('title')}>{item.id}</h1>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
     </Layout>
   )
