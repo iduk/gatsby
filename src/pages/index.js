@@ -40,7 +40,7 @@ const IndexPage = () => {
                     {/* <StaticImage src={`${item.thumb}`} alt={'image'} /> */}
                     {item.id !== 3 && (
                       <StaticImage
-                        src={`https://unsplash.it/640/480?`}
+                        src={`https://unsplash.it/512/512`}
                         layout="fullWidth"
                         aspectRatio={'3/2'}
                         alt={'image'}

@@ -72,9 +72,11 @@
   }
 
   .item {
-    background-color: blue;
+    background-color: var(--theme-bg);
     img {
-      mask-mode: luminance;
+      mask-image: url(../assets/images/shape2.svg);
+      transform: scale(1.5);
+      transition: transform 0.3s;
     }
   }
 }
