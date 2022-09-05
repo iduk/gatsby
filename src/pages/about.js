@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import * as styles from './about.module.scss'
 import classNames from 'classnames/bind'
-
+import Seo from '../components/seo'
 const cx = classNames.bind(styles)
 
 const About = () => {
@@ -15,5 +15,7 @@ const About = () => {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="ABOUT" />
 
 export default About

@@ -7,16 +7,14 @@ module.exports = {
     // nav
     menuLinks: [
       {
-        name: `About`,
+        name: `덕님`,
         url: `/about`,
+        subMenu: [],
       },
       {
-        name: `Reference`,
-        url: `/reference`,
-      },
-      {
-        name: `Blog`,
+        name: `보관함`,
         url: `/blog`,
+        subMenu: [],
       },
     ],
   },
@@ -26,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
+        name: `src`,
+        path: `${__dirname}/src`,
       },
     },
     {

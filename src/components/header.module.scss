@@ -6,22 +6,35 @@
   display: flex;
   justify-content: space-between;
   color: var(--gray-9);
-  flex-wrap: wrap;
   overflow: hidden;
   padding: 0.75rem 0;
 }
 
 .logo {
+  flex-shrink: 0;
+  width: 150px;
   display: block;
   font-weight: bolder;
   text-transform: uppercase;
   color: inherit;
 }
 
+.navTrigger {
+  z-index: 30;
+  display: none;
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  column-gap: 1.5vw;
+}
+
 .navLink {
-  display: inline-block;
   color: inherit;
-  font-size: 7vh;
+  display: inline-block;
+  font-size: 4vw;
   font-weight: bolder;
   line-height: 1;
   text-transform: uppercase;
@@ -30,6 +43,7 @@
   outline: none;
 }
 .navLink:hover {
+  color: white;
   background-position: 100%;
   background-image: linear-gradient(
     to right,
@@ -38,28 +52,15 @@
   );
 }
 .navLink.active {
+  color: white;
   background-color: var(--primary);
 }
 
-@include breakepoint-up(sm) {
-  .nav {
-    display: flex;
-    padding: 1rem 0;
-
-    .navList {
-      display: flex;
-      align-items: flex-end;
-      gap: 2rem;
-    }
-  }
-}
-
-.navTrigger {
-  z-index: 30;
-  display: none;
-}
-
 @include breakepoint-down(sm) {
+  .navTrigger {
+    display: block;
+    font-size: 1.5rem;
+  }
   .nav {
     display: none;
   }
@@ -75,10 +76,6 @@
     background-color: var(--secondary);
     color: var(--gray-9);
     padding: 0;
-  }
-  .navTrigger {
-    display: block;
-    font-size: 1.5rem;
   }
 
   .navList {

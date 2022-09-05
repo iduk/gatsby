@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={cx('navTrigger', 'btn')}
+          className={cx('navTrigger', 'btn', 'btn-primary')}
         >
           menu
         </button>

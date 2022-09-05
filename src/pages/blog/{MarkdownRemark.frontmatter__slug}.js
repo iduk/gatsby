@@ -1,17 +1,16 @@
 import * as React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql, Link } from 'gatsby'
-import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
-export default function BlogPostTemplate({ data: { markdownRemark } }) {
-  const { frontmatter, html, featuredImage } = markdownRemark
-  const imageData = getImage(frontmatter.featuredImage)
+export default function BlogPost({ data: { markdownRemark } }) {
+  const { frontmatter, html } = markdownRemark
+  // const imageData = getImage(frontmatter.featuredImage)
 
   return (
-    <Layout>
+    <>
       <Seo title={frontmatter.title} />
-      <Link className="btn text-primary" to="/blog">
+      <Link className="btn btn-primary btn-lg mb-3" to="/blog">
         Back to Blog
       </Link>
       <header>
@@ -23,7 +22,7 @@ export default function BlogPostTemplate({ data: { markdownRemark } }) {
 
       {/* <GatsbyImage image={imageData} alt={frontmatter.title} /> */}
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
-    </Layout>
+    </>
   )
 }
 
