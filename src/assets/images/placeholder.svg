@@ -1,7 +1,25 @@
-<svg width="100%" height="100%" viewBox="0 0 102 102" xmlns="http://www.w3.org/2000/svg">
-  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <path
-      d="M1,1 L101,1 L101,101 L1,101 L1,1 Z M1.36363636,1.36363636 L100.636364,100.636364 M100.636364,1.36363636 L1.36363636,100.636364"
-      id="Combined-Shape" stroke="#000000"></path>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" width="100%" height="100%" viewBox="0 0 514 514"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <clipPath id="placeholderClip">
+      <path d="M512,0 L512,512 L0,512 L0,0 L512,0 Z"></path>
+    </clipPath>
+  </defs>
+  <g transform="translate(1.0 1.0)">
+    <g clip-path="url(#placeholderClip)">
+      <g transform="">
+        <g transform="">
+          <polygon points="0,0 0,512 512,512 512,0 0,0 0,0" stroke="#000000" stroke-width="1" fill="none"
+            stroke-miterlimit="10"></polygon>
+        </g>
+        <g transform="">
+          <path d="M0,0 L512,512" stroke="#000000" stroke-width="1" fill="none" stroke-miterlimit="10"></path>
+        </g>
+        <g transform="">
+          <path d="M512,0 L0,512" stroke="#000000" stroke-width="1" fill="none" stroke-miterlimit="10"></path>
+        </g>
+      </g>
+    </g>
   </g>
 </svg>

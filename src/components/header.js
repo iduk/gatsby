@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => {
       <ThemeToggle />
       <div className={cx('navbar')}>
         <Link to={'/'} className={cx('logo')} title={siteTitle}>
-          <img src={pixelDuk} width={60} alt="logo" />
+          <img src={pixelDuk} width={'100%'} alt="logo" />
         </Link>
 
         <button

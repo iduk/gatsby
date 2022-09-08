@@ -1,0 +1,46 @@
+.postList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--theme-border);
+    color: var(--theme-text);
+    min-height: 200px;
+  }
+  &__content {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @include breakepoint-up(sm) {
+    &__item {
+      min-height: auto;
+      flex-direction: column;
+    }
+    &__thumbnail {
+      order: 1;
+    }
+    &__content {
+      order: 2;
+    }
+  }
+
+  @include breakepoint-up(md) {
+    &__item {
+      flex-direction: row;
+    }
+
+    &__thumbnail {
+      order: 2;
+    }
+    &__content {
+      order: 1;
+    }
+  }
+}

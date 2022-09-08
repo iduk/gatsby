@@ -7,12 +7,12 @@ module.exports = {
     // nav
     menuLinks: [
       {
-        name: `덕님`,
+        name: `about`,
         url: `/about`,
         subMenu: [],
       },
       {
-        name: `보관함`,
+        name: `blog`,
         url: `/blog`,
         subMenu: [],
       },
@@ -31,8 +31,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/posts`,
+        name: `post`,
+        path: `${__dirname}/src/content`,
       },
     },
     {
@@ -42,7 +42,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 1200,
             },
           },
         ],
@@ -50,21 +50,21 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: [`auto`, `webp`, `avif`],
-          placeholder: `dominantColor`,
-          quality: 80,
-          breakpoints: [600, 900, 1200, 1920],
-          backgroundColor: `transparent`,
-          tracedSVGOptions: {},
-          blurredOptions: {},
-          jpgOptions: {},
-          pngOptions: {},
-          webpOptions: {},
-          avifOptions: {},
-        },
-      },
+      // options: {
+      //   defaults: {
+      //     formats: [`auto`, `webp`, `avif`],
+      //     placeholder: `dominantColor`,
+      //     quality: 80,
+      //     breakpoints: [600, 900, 1200, 1920],
+      //     backgroundColor: `transparent`,
+      //     tracedSVGOptions: {},
+      //     blurredOptions: {},
+      //     jpgOptions: {},
+      //     pngOptions: {},
+      //     webpOptions: {},
+      //     avifOptions: {},
+      //   },
+      // },
     },
 
     {
@@ -103,11 +103,11 @@ module.exports = {
             // exportLocalsConvention: 'camelCaseOnly',
           },
         },
-        useResolveUrlLoader: {
-          options: {
-            debug: true,
-          },
-        },
+        // useResolveUrlLoader: {
+        //   options: {
+        //     debug: true,
+        //   },
+        // },
       },
     },
     {

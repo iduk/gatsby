@@ -32,29 +32,26 @@ const IndexPage = () => {
             <ul className={cx('indexWrap')}>
               {data.map(item => (
                 <li key={item.id} className={cx('list')}>
-                  <div
-                    data={item.id}
-                    className={cx('item')}
-                    // style={{ backgroundImage: `url(${item.thumb})` }}
-                  >
-                    {/* <StaticImage src={`${item.thumb}`} alt={'image'} /> */}
-                    {item.id !== 3 && (
-                      <StaticImage
-                        src={`https://unsplash.it/512/512`}
-                        layout="fullWidth"
-                        aspectRatio={'3/2'}
-                        alt={'image'}
-                      />
-                    )}
-                    {item.id === 3 && (
-                      <StaticImage
-                        src={'../assets/images/pixelduk.png'}
-                        layout="fullWidth"
-                        aspectRatio={'3/2'}
-                        alt={'image'}
-                      />
-                    )}
-                  </div>
+                  {item.id !== 3 && (
+                    <StaticImage
+                      src={`../assets/images/3d_render.avif`}
+                      layout="fullWidth"
+                      aspectRatio={'3/2'}
+                      className={cx('staticImg')}
+                      alt={'image'}
+                      loading={'lazy'}
+                    />
+                  )}
+                  {
+                    item.id === 3 && null
+                    // <StaticImage
+                    //   src={'../assets/images/pixelduk.png'}
+                    //   layout="fullWidth"
+                    //   aspectRatio={'3/2'}
+                    //   alt={'image'}
+                    // />
+                  }
+                  <div data={item.id} className={cx('item')}></div>
                   <div className={cx('content')}>
                     <h1 className={cx('title')}>{item.id}</h1>
                     <p>{item.content}</p>

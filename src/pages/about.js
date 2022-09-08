@@ -6,7 +6,7 @@ import classNames from 'classnames/bind'
 import Seo from '../components/seo'
 const cx = classNames.bind(styles)
 
-const About = () => {
+const AboutPage = () => {
   return (
     <Layout>
       <h1 className={cx('test')}>About</h1>
@@ -18,4 +18,4 @@ const About = () => {
 
 export const Head = () => <Seo title="ABOUT" />
 
-export default About
+export default AboutPage

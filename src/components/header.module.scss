@@ -11,8 +11,8 @@
 }
 
 .logo {
+  width: 8vh;
   flex-shrink: 0;
-  width: 150px;
   display: block;
   font-weight: bolder;
   text-transform: uppercase;
@@ -34,7 +34,7 @@
 .navLink {
   color: inherit;
   display: inline-block;
-  font-size: 4vw;
+  font-size: 8vh;
   font-weight: bolder;
   line-height: 1;
   text-transform: uppercase;
@@ -93,5 +93,9 @@
   }
   .navLink {
     font-size: 15vw;
+  }
+
+  .logo {
+    width: 5vh;
   }
 }

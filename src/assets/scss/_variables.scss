@@ -87,18 +87,16 @@ $font-weight: (
 // BreakPoint
 $grid-breakpoints: (
   xs: 0,
-  sm: 600px,
-  md: 900px,
-  lg: 1200px,
-  xl: 1800px,
+  sm: 480px,
+  md: 768px,
+  lg: 992px,
 ) !default;
 
 // Cotainer
 $container-max-widths: (
-  sm: 568px,
-  md: 880px,
-  lg: 1140px,
-  xl: 1720px,
+  sm: 479px,
+  md: 767px,
+  lg: 991px,
 ) !default;
 
 $col-count: 12 !default;
