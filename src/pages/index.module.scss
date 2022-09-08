@@ -13,9 +13,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
   @include breakepoint-up(lg) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @include breakepoint-up(xl) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -31,8 +28,6 @@
   background-size: cover;
   outline: 1 solid var(--theme-border);
   transition: transform 0.3s;
-
-  // height: 35vh;
 
   &:before,
   &:after {
@@ -62,14 +57,6 @@
     transform-origin: left;
     background-color: var(--gray-2);
   }
-
-  // background-image: url(../assets/images/placeholder.svg);
-  img {
-    opacity: 0;
-    // clip-path: url(../assets/images/placeholder.svg);
-    // clip-path: ellipse(50% 50% at 100% 50%);
-    background-image: url(../assets/images/placeholder.svg);
-  }
 }
 
 .list:hover {
@@ -87,13 +74,13 @@
 }
 
 .item {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  // position: absolute;
+  // width: 100%;
+  // height: 100%;
   overflow: hidden;
   word-break: break-all;
-  background-size: cover;
+  background-size: 100% 100%;
+  background-image: url(../assets/images/placeholder.svg);
 }
 .content {
   position: absolute;
