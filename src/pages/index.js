@@ -32,27 +32,26 @@ const IndexPage = () => {
             <ul className={cx('indexWrap')}>
               {data.map(item => (
                 <li key={item.id} className={cx('list')}>
-                  <div data={item.id} className={cx('item')}>
-                    {item.id !== 3 && (
-                      <StaticImage
-                        src={`https://unsplash.it/512/512`}
-                        layout="fullWidth"
-                        aspectRatio={'3/2'}
-                        className={cx('staticImg')}
-                        alt={'image'}
-                        loading={'lazy'}
-                      />
-                    )}
-                    {item.id === 3 && (
-                      <StaticImage
-                        src={'../assets/images/pixelduk.png'}
-                        layout="fullWidth"
-                        aspectRatio={'3/2'}
-                        alt={'image'}
-                        loading={'lazy'}
-                      />
-                    )}
-                  </div>
+                  {item.id !== 3 && (
+                    <StaticImage
+                      src={`https://unsplash.it/800`}
+                      layout="fullWidth"
+                      aspectRatio={'4/3'}
+                      className={cx('staticImg')}
+                      alt={'image'}
+                      loading={'lazy'}
+                    />
+                  )}
+                  {item.id === 3 && (
+                    <StaticImage
+                      src={'../assets/images/pixelduk.png'}
+                      layout="fullWidth"
+                      aspectRatio={'4/3'}
+                      alt={'image'}
+                      loading={'lazy'}
+                    />
+                  )}
+                  <div data={item.id} className={cx('item')}></div>
                   <div className={cx('content')}>
                     <h1 className={cx('title')}>{item.id}</h1>
                     <p>{item.content}</p>

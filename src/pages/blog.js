@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { kebabCase } from 'lodash'
 import * as styles from './blog.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
@@ -16,11 +17,26 @@ const BlogPage = ({ data }) => {
         {posts.map(post => (
           <li key={post.node.id} className={cx('postList__item')}>
             <div className={cx('postList__content')}>
-              <Link to={post.node.fields.slug}>
-                <h2>{post.node.frontmatter.title}</h2>
-              </Link>
-              <p>{post.node.frontmatter.date}</p>
-              <div className={cx('postList__excerpt')}>{post.node.excerpt}</div>
+              <div>
+                <Link to={post.node.fields.slug}>
+                  <h1 className="font-normal">{post.node.frontmatter.title}</h1>
+                </Link>
+                <p className={cx('date')}>{post.node.frontmatter.date}</p>
+                <p className={cx('excerpt')}>{post.node.excerpt}</p>
+              </div>
+
+              {/* Tags */}
+              {post.node.frontmatter.tags ? (
+                <div className={cx('tagsContainer')}>
+                  <ul className={cx('tagList')}>
+                    {post.node.frontmatter.tags.map(tag => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
 
             <div className={cx('postList__thumbnail')}>
@@ -49,13 +65,14 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
+          excerpt(format: PLAIN, pruneLength: 100, truncate: true)
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD", locale: "ko-KR")
             title
+            tags
             thumbnail {
               publicURL
               childImageSharp {

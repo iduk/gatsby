@@ -1,26 +1,37 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import { kebabCase } from 'lodash'
 import Seo from '../components/seo'
-
-import Layout from '../components/layout'
 
 const PostTemplate = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
-    <Layout>
+    <div>
       <Seo title={frontmatter.title} />
-      <Link className="btn btn-primary btn-lg mb-3" to="/blog">
-        Back to Blog
-      </Link>
+
       <section>
-        <div>
-          <h1>{frontmatter.title}</h1>
-          <span>{frontmatter.date}</span>
-        </div>
+        <Link className="btn btn-primary btn-lg mb-3" to="/blog">
+          Back to Blog
+        </Link>
+        <article>
+          <div>
+            <h1 className="font-normal">{frontmatter.title}</h1>
+            <p className="py-2">{frontmatter.date}</p>
+            <hr />
+            <ul className={'tagList'} style={{ display: 'flex' }}>
+              {frontmatter.tags?.map(tag => (
+                <li key={tag + `tag`} className="p-2">
+                  <span>{tag}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
         <div dangerouslySetInnerHTML={{ __html: html }} />
+        <hr />
       </section>
-    </Layout>
+    </div>
   )
 }
 
@@ -33,6 +44,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        tags
       }
     }
   }
