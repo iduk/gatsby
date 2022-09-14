@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `letsGetit`,
@@ -46,6 +50,21 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-giphy-random',
+      options: {
+        api_key: process.env.GATSBY_GIPHY_API_KEY,
+        rating: 'G',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'allMyNodes',
+        imagePath: 'nodes[].imageUrl',
+        name: 'remoteImage',
       },
     },
     {

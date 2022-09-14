@@ -1,7 +1,7 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import Header from './header'
+import Appbar from './appbar'
 import Seo from './seo'
 import * as styles from './layout.module.scss'
 import classNames from 'classnames/bind'
@@ -23,14 +23,16 @@ const Layout = ({ children, className }) => {
   const pageTitle = data.site.siteMetadata?.title
   return (
     <div className={cx('layout', `${className}`)}>
-      <Header siteTitle={pageTitle} />
+      <header>
+        <Appbar siteTitle={pageTitle} />
+      </header>
 
       <main>{children}</main>
 
-      {/* <footer>
+      <footer className={cx('footer')}>
         © {new Date().getFullYear()} CreateBy.
         <span>{data.site.siteMetadata.author}</span>
-      </footer> */}
+      </footer>
     </div>
   )
 }

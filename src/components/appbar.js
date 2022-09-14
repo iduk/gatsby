@@ -1,14 +1,14 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import * as styles from './header.module.scss'
+import * as styles from './appbar.module.scss'
 import classNames from 'classnames/bind'
 import ThemeToggle from './themeToggle'
 import pixelDuk from '../assets/images/pixelduk.svg'
 
 const cx = classNames.bind(styles)
 
-const Header = ({ siteTitle }) => {
+const Appbar = ({ siteTitle }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const data = useStaticQuery(
     graphql`
@@ -27,7 +27,7 @@ const Header = ({ siteTitle }) => {
   const navLinks = data.site.siteMetadata.menuLinks
 
   return (
-    <header className={cx('header', 'is-fluid')}>
+    <div className="is-fluid">
       <ThemeToggle />
       <div className={cx('navbar')}>
         <Link to={'/'} className={cx('logo')} title={siteTitle}>
@@ -57,16 +57,16 @@ const Header = ({ siteTitle }) => {
           </ul>
         </nav>
       </div>
-    </header>
+    </div>
   )
 }
 
-Header.propTypes = {
+Appbar.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Appbar.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default Appbar

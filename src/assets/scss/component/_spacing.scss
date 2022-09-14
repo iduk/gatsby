@@ -1,6 +1,6 @@
 // p-*, px-*, py-*
 
-$arrows: (
+$direction: (
   x: (
     '-left',
     '-right',
@@ -15,24 +15,52 @@ $arrows: (
   l: '-left',
 ) !default;
 
+$properties: (
+  m: 'margin',
+  p: 'padding',
+);
+
 @for $i from 0 through $space-count {
-  @each $p1, $p2 in (m: 'margin', p: 'padding') {
+  @each $p1, $p2 in $properties {
     .#{$p1}-#{$i} {
-      #{$p2}: $spacing * $i !important;
+      #{$p2}: $spacing * $i + rem;
     }
-    @each $name, $arrow in $arrows {
-      .#{$p1}#{$name}-#{$i} {
-        @if length($arrow) > 1 {
-          #{$p2}#{nth($arrow, 1)}: $spacing * $i !important;
-          #{$p2}#{nth($arrow, 2)}: $spacing * $i !important;
+    @each $name, $arrow in $direction {
+      .#{$p1}#{$name} {
+        @if $i == 0 {
+          &-0 {
+            @if length($arrow) > 1 {
+              #{$p2}#{nth($arrow, 1)}: 0;
+              #{$p2}#{nth($arrow, 2)}: 0;
+            } @else {
+              #{$p2}#{$arrow}: 0;
+            }
+          }
         } @else {
-          #{$p2}#{$arrow}: $spacing * $i !important;
+          &-#{$i} {
+            @if length($arrow) > 1 {
+              #{$p2}#{nth($arrow, 1)}: $spacing * $i + rem;
+              #{$p2}#{nth($arrow, 2)}: $spacing * $i + rem;
+            } @else {
+              #{$p2}#{$arrow}: $spacing * $i + rem;
+            }
+          }
         }
       }
     }
   }
 }
 
-.mx-auto {
-  @include margin-auto;
+// mt-auto ...
+@each $p1, $p2 in (m: 'margin') {
+  @each $name, $arrow in $direction {
+    .m#{$name}-auto {
+      @if length($arrow) > 1 {
+        margin#{nth($arrow, 1)}: auto;
+        margin#{nth($arrow, 2)}: auto;
+      } @else {
+        margin#{$arrow}: auto;
+      }
+    }
+  }
 }

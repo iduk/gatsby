@@ -18,6 +18,13 @@ body {
     'Helvetica Neue', 'Segoe UI';
   background-color: var(--theme-bg);
   color: var(--theme-text);
+  font-size: 14px;
+}
+
+@include breakepoint-up(sm) {
+  body {
+    font-size: 18px;
+  }
 }
 
 ul,

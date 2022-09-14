@@ -2,7 +2,7 @@
 title: '첫번째 포스트'
 slug: 'first'
 date: '2021-08-10'
-thumbnail: ../../assets/images/pixelduk.png
+thumbnail: ../../assets/images/photo.jpg
 ---
 
 훈장등의 영전은 이를 받은 자에게만 효력이 있고, 어떠한 특권도 이에 따르지 아니한다. 명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다.

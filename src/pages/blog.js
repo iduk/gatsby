@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import Img from 'gatsby-image'
 import { kebabCase } from 'lodash'
 import * as styles from './blog.module.scss'
 import classNames from 'classnames/bind'
@@ -9,17 +9,18 @@ const cx = classNames.bind(styles)
 
 const BlogPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
-  // const image = getImage(posts.thumbnail)
 
   return (
-    <Layout>
+    <Layout className={cx('blogPage')}>
       <ul className={cx('postList')}>
         {posts.map(post => (
           <li key={post.node.id} className={cx('postList__item')}>
             <div className={cx('postList__content')}>
               <div>
                 <Link to={post.node.fields.slug}>
-                  <h1 className="font-normal">{post.node.frontmatter.title}</h1>
+                  <h1 className={cx('title', 'font-normal')}>
+                    {post.node.frontmatter.title}
+                  </h1>
                 </Link>
                 <p className={cx('date')}>{post.node.frontmatter.date}</p>
                 <p className={cx('excerpt')}>{post.node.excerpt}</p>
@@ -41,12 +42,17 @@ const BlogPage = ({ data }) => {
 
             <div className={cx('postList__thumbnail')}>
               <Link to={post.node.fields.slug}>
-                <img
+                <Img
+                  fluid={
+                    post.node.frontmatter.thumbnail?.childImageSharp?.fluid
+                  }
+                />
+                {/* <img
                   src={
                     post.node.frontmatter.thumbnail?.childImageSharp?.fluid.src
                   }
                   alt="aaa"
-                />
+                /> */}
               </Link>
             </div>
           </li>
@@ -76,7 +82,7 @@ export const pageQuery = graphql`
             thumbnail {
               publicURL
               childImageSharp {
-                fluid(maxWidth: 200) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }

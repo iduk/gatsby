@@ -22,7 +22,7 @@ const PostTemplate = ({ data }) => {
             <ul className={'tagList'} style={{ display: 'flex' }}>
               {frontmatter.tags?.map(tag => (
                 <li key={tag + `tag`} className="p-2">
-                  <span>{tag}</span>
+                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                 </li>
               ))}
             </ul>

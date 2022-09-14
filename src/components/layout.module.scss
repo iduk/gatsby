@@ -1,6 +1,10 @@
 .layout {
   position: relative;
-  main {
-    min-height: 50vh;
+}
+
+.layout {
+  footer {
+    padding: 1rem 0;
+    // background-color: var(--gray-1);
   }
 }
